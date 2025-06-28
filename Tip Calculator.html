@@ -1,0 +1,16 @@
+<input type="number" id="bill" placeholder="Bill Amount" />
+<input type="number" id="tip" placeholder="Tip %" />
+<button onclick="calcTip()">Calculate</button>
+<p id="result"></p>
+
+<script>
+  function calcTip() {
+    const bill = parseFloat(document.getElementById("bill").value);
+    const tip = parseFloat(document.getElementById("tip").value);
+    if (isNaN(bill) || isNaN(tip)) return;
+    const tipAmount = (bill * tip) / 100;
+    const total = bill + tipAmount;
+    document.getElementById("result").textContent = 
+      `Tip: $${tipAmount.toFixed(2)} | Total: $${total.toFixed(2)}`;
+  }
+</script>
